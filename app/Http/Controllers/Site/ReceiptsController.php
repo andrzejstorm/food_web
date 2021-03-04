@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 class ReceiptsController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function index()
     {
-        //
-    }
+        return view(view: 'receipts');
+    }   
 }
