@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class WineListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,16 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view(view: 'about');
+        return view(view: 'winelist');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  $slug
+     */
+    public function show($slug)
+    {
+        return view(view:'wine')->withSlug($slug);
     }
 }

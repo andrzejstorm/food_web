@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CookbookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +14,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view(view: 'category');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param $slug
-     */
-    public function show($slug)
-    {
-        return view(view: 'show');
-    }
+        return view(view: 'cookbook');
+    }   
 }

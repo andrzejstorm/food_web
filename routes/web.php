@@ -14,11 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace'=>'App\Http\Controllers\Site'],function() {
-    Route::get('/', 'HomeController@index');
-    Route::get('products', 'CategoryController@index');
-    Route::get('products/{slug}', 'CategoryController@show');
-    Route::get('receipts', 'ReceiptsController@index');
-    Route::get('about', 'AboutController@index');
+
+    //Route to the main page of the restaurant
+    Route::get('/', 'HomeController@index'); 
+    
+    //Routes for the Menu and dishes info/details/price 
+    Route::get('cuisine', 'CuisineController@index');
+    Route::get('cuisine/{slug}', 'CuisineController@show');
+
+    //Routes for the wine list and wine info/price
+    Route::get('winelist', 'WineListController@index');
+    Route::get('winelist/{slug}', 'WinelistController@show');
+
+    //Route to the list of blog receipts
+    Route::get('cookbook', 'CookbookController@index');
+
+    //Route to the feedback form
     Route::get('contact', 'ContactController@index');
     Route::post('contact', 'ContactController@contact_form');
+
+    //Route for the purchase and checkout views
+
 });
