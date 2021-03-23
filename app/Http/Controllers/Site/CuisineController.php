@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class CuisineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,16 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view(view: 'contact');
+        return view(view: 'cuisine');
     }
 
-    public function contact_form(Reques $request)
+    /**
+     * Display the specified resource.
+     *
+     * @param $slug
+     */
+    public function show($slug)
     {
-        ddd($request->all()); 
+        return view(view: 'dishes')->withSlug($slug);
     }
 }
-
