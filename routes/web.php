@@ -16,22 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace'=>'App\Http\Controllers\Site'],function() {
 
     //Route to the main page of the restaurant
-    Route::get('/', 'HomeController@index'); 
+    Route::get('/', 'HomeController@index')->name('home'); 
     
     //Routes for the Menu and dishes info/details/price 
-    Route::get('cuisine', 'CuisineController@index');
-    Route::get('cuisine/{slug}', 'CuisineController@show');
+    Route::get('cuisine', 'CuisineController@index')->name('cuisine');
+    Route::get('cuisine/{slug}', 'CuisineController@show')->name('cuisine.details');
 
     //Routes for the wine list and wine info/price
-    Route::get('winelist', 'WineListController@index');
-    Route::get('winelist/{slug}', 'WinelistController@show');
+    Route::get('winelist', 'WineListController@index')->name('wine');
+    Route::get('winelist/{slug}', 'WinelistController@show')->name('wine.details');
 
-    //Route to the list of blog receipts
-    Route::get('cookbook', 'CookbookController@index');
+    //Route for the list of blog receipts
+    Route::get('cookbook', 'CookbookController@index')->name('cookbook');
 
-    //Route to the feedback form
-    Route::get('contact', 'ContactController@index');
-    Route::post('contact', 'ContactController@contact_form');
+    //Route for the feedback form
+    Route::get('contact', 'ContactController@index')->name('contact');
+    Route::post('contact', 'ContactController@contact_form')->name('contact.form');
 
     //Route for the purchase and checkout views
 
